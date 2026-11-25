@@ -1,11 +1,12 @@
 // Daten der sechs Hunde.
-// Eigene Fotos: Dateien als images/<id>-1.jpg, images/<id>-2.jpg, ... ablegen (bis 8 Stück).
-// Sie erscheinen automatisch in der Galerie.
+// Eigene Fotos: Dateien in images/ ablegen und beim Hund unter `photos` eintragen,
+// z. B. photos: ['rocky-1.webp', 'rocky-2.png']. Sie erscheinen dann in der Galerie.
 // Hauptbild: images/<id>.png (z. B. images/chase.png); ohne Datei wird das SVG gezeichnet.
 var DOGS = [
   {
     id: 'chase', name: 'Chase', color: '#1e5bb8', fur: '#a9713c', spots: false,
     hat: '👮', job: 'Polizeihund', vehicle: '🚓', breed: 'Schäferhund',
+    photos: ['chase-1.jpg', 'chase-2.webp', 'chase-3.jpg'],
     facts: [
       { icon: '👮', text: 'Polizei' },
       { icon: '🚓', text: 'Polizeiauto' },
@@ -18,6 +19,7 @@ var DOGS = [
   {
     id: 'marshall', name: 'Marshall', color: '#e53935', fur: '#ffffff', spots: true,
     hat: '🧑‍🚒', job: 'Feuerwehrhund', vehicle: '🚒', breed: 'Dalmatiner',
+    photos: ['marshall-1.webp', 'marshall-2.webp', 'marshall-3.webp'],
     facts: [
       { icon: '🧑‍🚒', text: 'Feuerwehr' },
       { icon: '🚒', text: 'Feuerwehrauto' },
@@ -30,6 +32,7 @@ var DOGS = [
   {
     id: 'skye', name: 'Skye', color: '#ec6fa5', fur: '#d9b38c', spots: false,
     hat: '👩‍✈️', job: 'Flughund', vehicle: '🚁', breed: 'Cockapoo',
+    photos: ['skye-1.webp', 'skye-2.webp', 'skye-3.webp'],
     facts: [
       { icon: '🚁', text: 'Hubschrauber' },
       { icon: '☁️', text: 'Fliegen' },
@@ -42,6 +45,7 @@ var DOGS = [
   {
     id: 'rubble', name: 'Rubble', color: '#f2b400', fur: '#d8b070', spots: false,
     hat: '👷', job: 'Baustellenhund', vehicle: '🚜', breed: 'Bulldogge',
+    photos: ['rubble-1.jpg', 'rubble-2.webp', 'rubble-3.webp'],
     facts: [
       { icon: '👷', text: 'Bauarbeiter' },
       { icon: '🚜', text: 'Bagger' },
@@ -54,6 +58,7 @@ var DOGS = [
   {
     id: 'rocky', name: 'Rocky', color: '#43a047', fur: '#9aa0a6', spots: false,
     hat: '♻️', job: 'Recyclinghund', vehicle: '🚛', breed: 'Mischling',
+    photos: ['rocky-1.webp', 'rocky-2.png', 'rocky-3.png'],
     facts: [
       { icon: '♻️', text: 'Recycling' },
       { icon: '🚛', text: 'Müllwagen' },
@@ -66,6 +71,7 @@ var DOGS = [
   {
     id: 'zuma', name: 'Zuma', color: '#fb8c00', fur: '#7b4a2a', spots: false,
     hat: '🤿', job: 'Wasserretter', vehicle: '🚤', breed: 'Labrador',
+    photos: ['zuma-1.jpg', 'zuma-2.jpg', 'zuma-3.webp'],
     facts: [
       { icon: '🤿', text: 'Tauchen' },
       { icon: '🚤', text: 'Boot' },

@@ -16,11 +16,11 @@ Alternativ: `npx serve -l 8000` oder mit Python `python -m http.server 8000`.
 
 ## Hunde-Bilder (PNG)
 
-Pro Hund ein quadratisches Bild als `images/<id>.png` ablegen (`chase`, `marshall`, `skye`, `rubble`, `rocky`, `zuma`, ca. 400×400 px). Fehlt die Datei, wird automatisch das gezeichnete SVG-Gesicht angezeigt.
+Pro Hund ein quadratisches Bild als `images/<id>.png` ablegen (`chase`, `marshall`, `skye`, `rubble`, `rocky`, `zuma`, empfohlen: 800×800 px). Fehlt die Datei, wird automatisch das gezeichnete SVG-Gesicht angezeigt.
 
 ## Eigene Fotos
 
-Bilder als `images/<name>-1.jpg`, `images/<name>-2.jpg` … ablegen (z. B. `images/chase-1.jpg`, bis 8 pro Hund). Sie erscheinen automatisch in der Galerie.
+Bilder (jpg, jpeg, png oder webp, empfohlen: 1200×1200 px) in `images/` ablegen und beim jeweiligen Hund in `js/dogs.js` unter `photos` eintragen, z. B. `photos: ['rocky-1.webp', 'rocky-2.png']`. Sie erscheinen in dieser Reihenfolge in der Galerie. Nur eingetragene Dateien werden geladen (keine 404-Fehler in der Konsole).
 
 ## GitHub Pages
 

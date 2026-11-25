@@ -56,22 +56,25 @@
   }
   slidesEl.addEventListener('scroll', updateDots, { passive: true });
 
-  // Optionale eigene Fotos: images/<id>-1.jpg ... (nur vorhandene werden angezeigt)
-  var tried = 0;
-  for (var n = 1; n <= 8; n++) {
-    (function (n) {
-      var url = 'images/' + d.id + '-' + n + '.jpg';
-      var img = new Image();
-      img.onload = function () {
-        var div = document.createElement('div');
-        div.className = 'slide photo';
-        img.alt = d.name;
-        div.appendChild(img);
-        slidesEl.insertBefore(div, slidesEl.children[Math.min(n, slidesEl.children.length)]);
-        renderDots();
-      };
-      img.src = url;
-    })(n);
-  }
+  // Eigene Fotos: Dateinamen aus d.photos (siehe dogs.js), liegen in images/
+  (d.photos || []).forEach(function (file, i) {
+    var img = new Image();
+    img.onload = function () {
+      var div = document.createElement('div');
+      div.className = 'slide photo';
+      div.setAttribute('data-n', i);
+      img.alt = d.name;
+      div.appendChild(img);
+      var photos = slidesEl.querySelectorAll('.slide.photo');
+      var before = null;
+      for (var k = 0; k < photos.length; k++) {
+        if (+photos[k].getAttribute('data-n') > i) { before = photos[k]; break; }
+      }
+      if (!before) before = slidesEl.children[1 + photos.length];
+      slidesEl.insertBefore(div, before || null);
+      renderDots();
+    };
+    img.src = 'images/' + file;
+  });
   renderDots();
 })();
