@@ -1,6 +1,7 @@
 // Daten der sechs Hunde.
 // Eigene Fotos: Dateien als images/<id>-1.jpg, images/<id>-2.jpg, ... ablegen (bis 8 Stück).
 // Sie erscheinen automatisch in der Galerie.
+// Hauptbild: images/<id>.png (z. B. images/chase.png); ohne Datei wird das SVG gezeichnet.
 var DOGS = [
   {
     id: 'chase', name: 'Chase', color: '#1e5bb8', fur: '#a9713c', spots: false,
@@ -75,6 +76,15 @@ var DOGS = [
     ]
   }
 ];
+
+// Hunde-Bild: images/<id>.png; falls die Datei fehlt, wird das gezeichnete SVG angezeigt.
+function fillDogFace(el, d) {
+  var img = new Image();
+  img.alt = d.name;
+  img.onerror = function () { el.innerHTML = dogFaceSVG(d); };
+  img.src = 'images/' + d.id + '.png';
+  el.appendChild(img);
+}
 
 // Gezeichnetes Hunde-Gesicht als SVG (eigene Illustration).
 function dogFaceSVG(d) {

@@ -15,7 +15,7 @@
   meta.content = d.color;
 
   var slides = [
-    '<div class="slide face">' + dogFaceSVG(d) + '</div>',
+    '<div class="slide face"></div>',
     '<div class="slide emoji"><span>' + d.vehicle + '</span></div>',
     '<div class="slide emoji"><span>' + d.hat + '</span><span>' + d.vehicle + '</span></div>'
   ];
@@ -35,6 +35,7 @@
     '<a class="back back-bottom" href="index.html" aria-label="Zurück">⬅️ 🏠</a>';
 
   var slidesEl = document.getElementById('slides');
+  fillDogFace(slidesEl.firstChild, d);
   var dotsEl = document.getElementById('dots');
 
   function renderDots() {

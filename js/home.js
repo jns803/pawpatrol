@@ -7,8 +7,9 @@
     a.style.setProperty('--c', d.color);
     a.setAttribute('aria-label', d.name);
     a.innerHTML =
-      '<span class="tile-img">' + dogFaceSVG(d) + '</span>' +
+      '<span class="tile-img"></span>' +
       '<span class="tile-name">' + d.name + '</span>';
+    fillDogFace(a.firstChild, d);
     root.appendChild(a);
   });
 })();
